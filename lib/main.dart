@@ -2,6 +2,7 @@
 
 import 'package:auth_using_sanctum/screens/home_screen.dart';
 import 'package:auth_using_sanctum/screens/login_screen.dart';
+import 'package:auth_using_sanctum/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
       routes: {
         'loginScreen': (context) => LoginScreen(),
         'homeScreen': (context) => HomeScreen(),
+        'registerScreen': (context) => RegisterScreen(),
       },
     );
   }
