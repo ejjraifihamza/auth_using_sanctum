@@ -25,6 +25,25 @@ class Auth extends ChangeNotifier {
     }
   }
 
+  void register({Map? registerData, data}) async {
+    print('Register data is $registerData');
+    print('Login data is $data');
+
+    try {
+      Dio.Response response = await dio().post('/register', data: registerData);
+    } catch (e) {
+      print(e);
+    }
+
+    try {
+      Dio.Response responseTwo = await dio().post('/sanctum/token', data: data);
+      String token = responseTwo.data.toString();
+      tryToken(token: token);
+    } catch (e) {
+      print(e);
+    }
+  }
+
   void tryToken({String? token}) async {
     if (token == null) {
       return;
