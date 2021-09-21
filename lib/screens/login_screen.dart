@@ -90,6 +90,27 @@ class _LoginScreenState extends State<LoginScreen> {
                       }
                     },
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      Text('Do not have account '),
+                      InkWell(
+                        child: Text(
+                          'register',
+                          style: TextStyle(
+                            color: Colors.red,
+                          ),
+                        ),
+                        onTap: () =>
+                            Navigator.of(context).pushNamed('registerScreen'),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
                   ElevatedButton(
                     onPressed: () {
                       Map data = {
